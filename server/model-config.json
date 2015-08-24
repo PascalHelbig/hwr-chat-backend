@@ -36,5 +36,17 @@
   "Account": {
     "dataSource": "mysqlServerPascal",
     "public": true
+  },
+  "Message": {
+    "dataSource": "mysqlServerPascal",
+    "public": true
+  },
+  "Chat": {
+    "dataSource": "mysqlServerPascal",
+    "public": true
+  },
+  "Course": {
+    "dataSource": "mysqlServerPascal",
+    "public": true
   }
 }
