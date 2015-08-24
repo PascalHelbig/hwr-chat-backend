@@ -3,13 +3,13 @@
     "name": "db",
     "connector": "memory"
   },
-  "mysql-server-pascal": {
-    "name": "mysql-server-pascal",
-    "connector": "mysql",
+  "mysqlServerPascal": {
     "host": "82.165.140.38",
     "port": 3306,
     "database": "hwr-chat",
     "username": "hwr-chat",
-    "password": "Jxh9n#53"
+    "password": "Jxh9n#53",
+    "name": "mysqlServerPascal",
+    "connector": "mysql"
   }
 }
