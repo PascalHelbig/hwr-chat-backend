@@ -12,7 +12,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "accounts": {
+      "type": "hasAndBelongsToMany",
+      "model": "Account",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

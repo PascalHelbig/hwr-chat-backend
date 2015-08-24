@@ -14,7 +14,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "course": {
+      "type": "belongsTo",
+      "model": "Course",
+      "foreignKey": ""
+    },
+    "chats": {
+      "type": "hasAndBelongsToMany",
+      "model": "Chat",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
