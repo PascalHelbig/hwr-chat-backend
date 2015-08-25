@@ -1,0 +1,24 @@
+{
+  "name": "AccountChat",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    },
+    "chat": {
+      "type": "belongsTo",
+      "model": "Chat",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

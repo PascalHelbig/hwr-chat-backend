@@ -48,5 +48,9 @@
   "Course": {
     "dataSource": "mysqlServerPascal",
     "public": true
+  },
+  "AccountChat": {
+    "dataSource": "mysqlServerPascal",
+    "public": false
   }
 }

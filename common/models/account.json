@@ -21,9 +21,10 @@
       "foreignKey": ""
     },
     "chats": {
-      "type": "hasAndBelongsToMany",
+      "type": "hasMany",
       "model": "Chat",
-      "foreignKey": ""
+      "foreignKey": "",
+      "through": "AccountChat"
     }
   },
   "acls": [],

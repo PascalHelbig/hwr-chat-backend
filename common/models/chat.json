@@ -14,9 +14,10 @@
   "validations": [],
   "relations": {
     "accounts": {
-      "type": "hasAndBelongsToMany",
+      "type": "hasMany",
       "model": "Account",
-      "foreignKey": ""
+      "foreignKey": "",
+      "through": "AccountChat"
     }
   },
   "acls": [],
