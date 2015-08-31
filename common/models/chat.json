@@ -18,6 +18,11 @@
       "model": "Account",
       "foreignKey": "",
       "through": "AccountChat"
+    },
+    "messages": {
+      "type": "hasMany",
+      "model": "Message",
+      "foreignKey": ""
     }
   },
   "acls": [],
