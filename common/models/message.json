@@ -13,9 +13,9 @@
   },
   "validations": [],
   "relations": {
-    "user": {
+    "account": {
       "type": "belongsTo",
-      "model": "User",
+      "model": "Account",
       "foreignKey": ""
     },
     "chat": {

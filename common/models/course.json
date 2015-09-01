@@ -18,9 +18,9 @@
       "model": "Account",
       "foreignKey": ""
     },
-    "users": {
+    "account": {
       "type": "hasMany",
-      "model": "User",
+      "model": "Account",
       "foreignKey": ""
     }
   },
