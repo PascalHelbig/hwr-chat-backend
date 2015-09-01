@@ -11,6 +11,14 @@
     },
     "isStaff": {
       "type": "boolean"
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "firstname": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
