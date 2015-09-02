@@ -14,6 +14,7 @@
     "loopback-boot": "^2.6.5",
     "loopback-connector-mysql": "^2.2.0",
     "loopback-datasource-juggler": "^2.19.0",
+    "loopback-ds-timestamp-mixin": "^3.2.2",
     "serve-favicon": "^2.0.1"
   },
   "optionalDependencies": {
