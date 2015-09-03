@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": true
+  },
   "properties": {
     "content": {
       "type": "object",
@@ -24,9 +27,13 @@
       "foreignKey": ""
     }
   },
-  "acls": [],
-  "methods": {},
-  "mixins": {
-    "TimeStamp" : true
-  }
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
 }
