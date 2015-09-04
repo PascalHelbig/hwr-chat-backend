@@ -19,6 +19,9 @@
     "firstname": {
       "type": "string",
       "required": true
+    },
+    "phone": {
+      "type": "number"
     }
   },
   "validations": [],
