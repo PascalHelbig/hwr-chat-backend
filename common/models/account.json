@@ -19,6 +19,9 @@
     "firstname": {
       "type": "string",
       "required": true
+    },
+    "phone": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -35,6 +38,13 @@
       "through": "AccountChat"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
