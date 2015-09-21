@@ -17,7 +17,7 @@ module.exports = function(app) {
     if (err) throw err;
     app.models.Course.create({name: "Informatik"}, function(err, course) {
       if (err) throw err;
-      for (var i = 0; i < 100; i++) {
+      for (var i = 0; i < 3; i++) {
         var firstName = faker.name.firstName();
         var lastName = faker.name.lastName();
         app.models.Account.create({
