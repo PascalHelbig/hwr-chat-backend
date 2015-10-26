@@ -4,11 +4,11 @@
     "connector": "memory"
   },
   "mysqlServerPascal": {
-    "host": "194.94.23.29",
+    "host": "82.165.140.38",
     "port": 3306,
-    "database": "hwrchat",
-    "username": "hwrchat",
-    "password": "3_mJhwrc!P",
+    "database": "hwr-chat",
+    "username": "hwr-chat",
+    "password": "Jxh9n#53",
     "name": "mysqlServerPascal",
     "connector": "mysql"
   }

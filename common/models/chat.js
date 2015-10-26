@@ -7,6 +7,7 @@ module.exports = function(Chat) {
     var socket = Chat.app.io;
     if(ctx.isNewInstance){
       //Now publishing the data..
+      console.log('POST ausgeführt.');
       pubsub.publish(socket, {
         collectionName : 'Chat',
         data: ctx.instance,
@@ -26,12 +27,13 @@ module.exports = function(Chat) {
   }); //after save..
   //ChatDetail before delete..
   Chat.observe("before delete", function(ctx, next){
+    console.log(ctx);
     var socket = Chat.app.io;
     //Now publishing the data..
     pubsub.publish(socket, {
       collectionName : 'Chat',
       data: ctx.instance.id,
-      modelId: ctx.instance.id,
+      //modelId: ctx.instance.id,
       method: 'DELETE'
     });
     //move to next middleware..
