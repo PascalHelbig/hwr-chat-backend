@@ -7,7 +7,7 @@ module.exports = function(Chat) {
     var socket = Chat.app.io;
     if(ctx.isNewInstance){
       //Now publishing the data..
-      console.log('POST ausgeführt.');
+      console.log('POST ausgefÃ¼hrt.');
       pubsub.publish(socket, {
         collectionName : 'Chat',
         data: ctx.instance,
