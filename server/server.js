@@ -32,6 +32,7 @@ boot(app, __dirname, function (err) {
         }, function (err, tokenDetail) {
           if (err) throw err;
           if (tokenDetail.length) {
+            socket.join('user' + value.userId);
             callback(null, true);
             var AccountChat = app.models.AccountChat;
             AccountChat.find({where: {accountId: value.userId}}, function (err, chats) {
