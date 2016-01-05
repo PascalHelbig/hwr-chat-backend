@@ -55,7 +55,8 @@
       "property": [
         "__get__course",
         "__get__chats",
-        "__create__chats"
+        "__create__chats",
+        "__unlink__chats"
       ]
     }
   ],
