@@ -46,7 +46,10 @@
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "find"
+      "property": [
+        "find",
+        "validatePw"
+      ]
     },
     {
       "principalType": "ROLE",
