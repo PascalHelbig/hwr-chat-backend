@@ -43,22 +43,19 @@
   },
   "acls": [
     {
-      "accessType": "READ",
       "principalType": "ROLE",
       "principalId": "$authenticated",
-      "permission": "ALLOW"
+      "permission": "ALLOW",
+      "property": "find"
     },
     {
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "__get__course"
-    },
-    {
-      "principalType": "ROLE",
-      "principalId": "$owner",
-      "permission": "ALLOW",
-      "property": "__get__chats"
+      "property": [
+        "__get__course",
+        "__get__chats"
+      ]
     }
   ],
   "methods": {}
