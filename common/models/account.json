@@ -54,7 +54,8 @@
       "permission": "ALLOW",
       "property": [
         "__get__course",
-        "__get__chats"
+        "__get__chats",
+        "__create__chats"
       ]
     }
   ],
