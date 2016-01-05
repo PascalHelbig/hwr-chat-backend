@@ -40,7 +40,7 @@
   },
   "Message": {
     "dataSource": "mysqlServerPascal",
-    "public": true
+    "public": false
   },
   "Chat": {
     "dataSource": "mysqlServerPascal",
