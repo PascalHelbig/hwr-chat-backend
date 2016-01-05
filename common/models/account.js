@@ -1,4 +1,5 @@
-module.exports = function(Account) {
+var app = require('../../server/server');
+module.exports = function (Account) {
 
   Account.validatePw = function (id, password, cb) {
     // Suche den Account mit der id
@@ -34,4 +35,15 @@ module.exports = function(Account) {
       returns: {arg: 'result', type: 'boolean'}
     }
   );
+
+  Account.observe('after delete', function (ctx, next) {
+    var accountId = ctx.where.id;
+    if (accountId) {
+      app.models.AccountChat.destroyAll({accountId: accountId}, function () {
+        next();
+      });
+    } else {
+      next();
+    }
+  }); // after delete...
 };
