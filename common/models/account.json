@@ -24,6 +24,9 @@
       "type": "number"
     }
   },
+  "hidden": [
+    "email"
+  ],
   "validations": [],
   "relations": {
     "course": {
@@ -40,9 +43,9 @@
   },
   "acls": [
     {
-      "accessType": "*",
+      "accessType": "READ",
       "principalType": "ROLE",
-      "principalId": "$everyone",
+      "principalId": "$authenticated",
       "permission": "ALLOW"
     },
     {
