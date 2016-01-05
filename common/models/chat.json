@@ -46,7 +46,8 @@
       "principalId": "chatMember",
       "property": [
         "updateAttributes",
-        "__create__messages"
+        "__create__messages",
+        "__link__accounts"
       ],
       "permission": "ALLOW"
     }
