@@ -44,7 +44,10 @@
     {
       "principalType": "ROLE",
       "principalId": "chatMember",
-      "property": "__create__messages",
+      "property": [
+        "updateAttributes",
+        "__create__messages"
+      ],
       "permission": "ALLOW"
     }
   ],
