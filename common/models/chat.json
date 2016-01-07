@@ -12,7 +12,8 @@
     "name": {
       "type": "string",
       "required": true
-    }
+    },
+    "lastMessage": "Date"
   },
   "validations": [],
   "relations": {

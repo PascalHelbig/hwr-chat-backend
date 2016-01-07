@@ -1,3 +1,4 @@
+var app = require('../../server/server');
 var loopback = require('loopback');
 module.exports = function (Message) {
 
@@ -18,6 +19,7 @@ module.exports = function (Message) {
       var socket = Message.app.io;
       // Sende Nachricht an ChatId-Room
       socket.to(ctx.instance.chatId).emit('NewMessages', {data: ctx.instance});
+      app.models.Chat.updateAll({id: ctx.instance.chatId}, {lastMessage: ctx.instance.createdAt});
     }
     next();
   }); //after save..
