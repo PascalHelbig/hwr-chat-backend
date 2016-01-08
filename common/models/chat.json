@@ -14,7 +14,11 @@
       "required": true
     },
     "lastMessage": "Date",
-    "isGroup": "boolean"
+    "isGroup": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
   },
   "validations": [],
   "relations": {
