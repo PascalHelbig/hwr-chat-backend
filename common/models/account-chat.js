@@ -1,5 +1,21 @@
 var app = require('../../server/server');
-module.exports = function(AccountChat) {
+module.exports = function (AccountChat) {
+  AccountChat.observe('before save', function (ctx, next) {
+    if (ctx.isNewInstance) {
+      // Wenn der Chat keine Gruppe ist ...
+      if (!ctx.instance.isGroup) {
+        return AccountChat.count({chatId: ctx.instance.chatId}, function (err, count) {
+          // ... und schon zwei Accounts im Chat sind
+          if (count >= 2) {
+            return next(new Error("Chat ist kein Gruppenchat"));
+          }
+          next();
+        });
+      }
+    }
+    next();
+  }); // before save
+
   AccountChat.observe('after save', function (ctx, next) {
 
     if (ctx.isNewInstance) {
