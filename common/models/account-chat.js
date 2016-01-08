@@ -2,18 +2,24 @@ var app = require('../../server/server');
 module.exports = function (AccountChat) {
   AccountChat.observe('before save', function (ctx, next) {
     if (ctx.isNewInstance) {
-      // Wenn der Chat keine Gruppe ist ...
-      if (!ctx.instance.isGroup) {
-        return AccountChat.count({chatId: ctx.instance.chatId}, function (err, count) {
-          // ... und schon zwei Accounts im Chat sind
-          if (count >= 2) {
-            return next(new Error("Chat ist kein Gruppenchat"));
-          }
-          next();
-        });
-      }
+      app.models.Chat.findOne(ctx.chatId).then(function (err, chat) {
+        console.log(err, chat);
+        if (err) {
+          return next();
+        }
+        // Wenn der Chat keine Gruppe ist ...
+        if (!chat.isGroup) {
+          return AccountChat.count({chatId: chat.id}, function (err, count) {
+            // ... und schon zwei Accounts im Chat sind ...
+            if (count >= 2) {
+              return next(new Error("Chat ist kein Gruppenchat")); // ... dann gib Fehlermeldung
+            }
+            next();
+          });
+        }
+        next();
+      });
     }
-    next();
   }); // before save
 
   AccountChat.observe('after save', function (ctx, next) {
@@ -35,17 +41,17 @@ module.exports = function (AccountChat) {
     next();
   }); //after save..
 
-  AccountChat.observe('after delete', function(ctx, next) {
+  AccountChat.observe('after delete', function (ctx, next) {
     var chatId = ctx.where.chatId;
     if (chatId) {
-      AccountChat.count({chatId: chatId}, function(err, count) {
+      AccountChat.count({chatId: chatId}, function (err, count) {
         if (err || count > 0) {
           return next();
         }
 
         // Wenn kein User mehr im Chat ist kann der Chat (inkl. Messages) gelöscht werden.
-        app.models.Chat.destroyById(chatId, function() {
-          app.models.Message.destroyAll({chatId: chatId}, function() {
+        app.models.Chat.destroyById(chatId, function () {
+          app.models.Message.destroyAll({chatId: chatId}, function () {
             next();
           });
         });
