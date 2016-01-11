@@ -3,7 +3,6 @@ module.exports = function (AccountChat) {
   AccountChat.observe('before save', function (ctx, next) {
     if (ctx.isNewInstance) {
       app.models.Chat.findOne(ctx.chatId).then(function (err, chat) {
-        console.log(err, chat);
         if (err) {
           return next();
         }
