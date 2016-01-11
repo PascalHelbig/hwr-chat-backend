@@ -16,6 +16,7 @@ module.exports = function (Chat) {
         for (var i = 0; i < accounts.length; i++) {
           if (accounts[i].id !== currentUser) {
             ctx.instance.name = accounts[i].firstname + " " + accounts[i].lastname;
+            ctx.instance.accountId = accounts[i].id;
             return next();
           }
         }
