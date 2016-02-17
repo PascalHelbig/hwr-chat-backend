@@ -1,5 +1,6 @@
 var app = require('../../server/server');
 var loopback = require('loopback');
+var escape = require('escape-html');
 module.exports = function (Message) {
 
   // Vor dem Speichern der Nachricht, setzte accountId auf den angemeldeten User
@@ -10,6 +11,7 @@ module.exports = function (Message) {
     if (user) {
       ctx.instance.accountId = user.userId;
     }
+    ctx.instance.content = escape(ctx.instance.content);
     next();
   });
 

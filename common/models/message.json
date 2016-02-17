@@ -10,7 +10,7 @@
   },
   "properties": {
     "content": {
-      "type": "object",
+      "type": "String",
       "required": true
     }
   },

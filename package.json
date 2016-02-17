@@ -11,6 +11,7 @@
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "errorhandler": "^1.1.1",
+    "escape-html": "^1.0.3",
     "faker": "^3.0.1",
     "loopback": "^2.14.0",
     "loopback-boot": "^2.6.5",
